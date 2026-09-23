@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tc_001",
+    "dtc_code": "P0300",
+    "query": "What causes engine misfire P0300 and what are the normal sensor parameters?",
+    "ground_truth_causes": ["Crankshaft position sensor", "Ignition coil", "Spark plug", "Lack of fuel"],
+    "ground_truth_sensors": ["CKP Sensor Signal", "Fuel Pressure", "Spark Plug Resistance"],
+    "expected_asil": "ASIL B"
+  },
+  {
+    "id": "tc_002",
+    "dtc_code": "P0171",
+    "query": "Fuel system lean bank 1 causes and target parameter ranges",
+    "ground_truth_causes": ["Air fuel ratio sensor", "Mass air flow sensor", "Fuel injector", "Intake air leak"],
+    "ground_truth_sensors": ["A/F Sensor 1", "MAF Sensor", "Fuel Pressure"],
+    "expected_asil": "ASIL A"
+  },
+  {
+    "id": "tc_003",
+    "dtc_code": "P0420",
+    "query": "Catalyst system efficiency below threshold bank 1 diagnostic procedures",
+    "ground_truth_causes": ["Three way catalyst", "Exhaust gas leak", "HO2S2 sensor"],
+    "ground_truth_sensors": ["Heated Oxygen Sensor 2", "Exhaust Temp"],
+    "expected_asil": "QM"
+  },
+  {
+    "id": "tc_004",
+    "dtc_code": "P0101",
+    "query": "Mass or Volume Air Flow Circuit Range or Performance Problem causes and pinouts",
+    "ground_truth_causes": ["Dirty MAF sensor", "Air intake tube leak", "ECU wiring harness"],
+    "ground_truth_sensors": ["MAF Voltage", "Intake Air Temp"],
+    "expected_asil": "ASIL A"
+  },
+  {
+    "id": "tc_005",
+    "dtc_code": "P0128",
+    "query": "Coolant Temperature Below Thermostat Regulating Temperature symptoms and checks",
+    "ground_truth_causes": ["Stuck open thermostat", "ECT sensor faulty", "Coolant level low"],
+    "ground_truth_sensors": ["ECT Sensor Voltage", "Engine Temperature"],
+    "expected_asil": "QM"
+  },
+  {
+    "id": "tc_006",
+    "dtc_code": "P0335",
+    "query": "Crankshaft Position Sensor A Circuit Malfunction causes and inspection steps",
+    "ground_truth_causes": ["CKP sensor failure", "Signal plate damaged", "Harness open or shorted"],
+    "ground_truth_sensors": ["CKP Voltage", "Engine Speed RPM"],
+    "expected_asil": "ASIL C"
+  },
+  {
+    "id": "tc_007",
+    "dtc_code": "P0340",
+    "query": "Camshaft Position Sensor A Circuit Bank 1 failure conditions and pin testing",
+    "ground_truth_causes": ["CMP sensor failure", "Starter motor noise interference", "Camshaft sprocket damage"],
+    "ground_truth_sensors": ["CMP Phase Signal", "Battery Reference Voltage"],
+    "expected_asil": "ASIL B"
+  },
+  {
+    "id": "tc_008",
+    "dtc_code": "P0507",
+    "query": "Idle Air Control System RPM Higher Than Expected troubleshooting steps",
+    "ground_truth_causes": ["Electric throttle control actuator failure", "Intake air leak", "PCV valve stuck open"],
+    "ground_truth_sensors": ["Throttle Position Sensor", "Engine Idle RPM"],
+    "expected_asil": "ASIL A"
+  },
+  {
+    "id": "tc_009",
+    "dtc_code": "P0442",
+    "query": "Evaporative Emission Control System Leak Detected Small Leak causes",
+    "ground_truth_causes": ["Loose fuel cap", "EVAP purge line leak", "Canister vent control valve stuck"],
+    "ground_truth_sensors": ["EVAP Pressure Sensor", "Fuel Tank Pressure"],
+    "expected_asil": "QM"
+  },
+  {
+    "id": "tc_010",
+    "dtc_code": "P0705",
+    "query": "Transmission Range Sensor Circuit Malfunction PRNDL Input troubleshooting",
+    "ground_truth_causes": ["Inhibitor switch out of adjustment", "Control linkage binding", "Park Neutral position switch harness open"],
+    "ground_truth_sensors": ["Inhibitor Switch Signal", "TCM Voltage"],
+    "expected_asil": "ASIL B"
+  }
+]

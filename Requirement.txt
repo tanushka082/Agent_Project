@@ -1,0 +1,8 @@
+langchain
+python-dotenv
+ipykernel
+langchain-community 
+lancedb
+pymupdf4llm
+langgraph
+pandas
