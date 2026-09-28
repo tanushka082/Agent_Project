@@ -1,0 +1,1646 @@
+{
+"dataset_name": "Nissan_2008_Sentra_EC_DTC_RAG_Eval_Dataset",
+"source_document": "Nissan_Car_Fault_Codes_DTC.pdf (Engine Control System - EC section, 2008 Sentra Service Manual)",
+"purpose": "Evaluate RAG pipeline (retrieval + generation) quantization accuracy for llama3.2:3b (fp16 vs INT4) using faithfulness, answer relevancy and context relevancy metrics.",
+"terminology_policy": "All sensor names and acronyms in 'groundtruth_sensor', 'groundtruth_cause', 'context' and 'expected_output' fields are copied verbatim from the source manual, e.g. 'Crankshaft position sensor (POS)' (not 'CKP sensor' or 'crank sensor'), 'Camshaft position sensor (PHASE)' (not 'CMP sensor'), and 'Mass air flow sensor' (not 'mass flow sensor' or 'MAF sensor'). The 'forbidden_synonym_terms' field lists common synonyms NOT used in this manual so that generated answers using those synonyms can be flagged as terminology drift rather than scored as correct paraphrases, keeping fp16 vs INT4 comparisons from being skewed by wording mismatches.",
+"num_test_cases": 124,
+"num_unique_dtc": 62,
+"test_cases": [
+{
+"id": "TC001",
+"dtc": "U1000, U1001",
+"trouble_diagnosis_name": "CAN communication line",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC U1000, U1001 CAN COMMUNICATION LINE",
+"manual_reference": "EC-142",
+"query": "The ECM is not transmitting or receiving the CAN communication signal of OBD for 2 seconds or more. What DTC is this and what is the possible cause?",
+"context": "DTC U1000, U1001 CAN COMMUNICATION LINE\nOn Board Diagnosis Logic\nDTC No.: U1000, U1001    Trouble diagnosis name: CAN communication line\nDTC detecting condition: When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001).\nPossible cause:\n  • Harness or connectors (CAN communication line is open or shorted.)\n(Reference: EC-142, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001).",
+"groundtruth_cause": [
+"Harness or connectors (CAN communication line is open or shorted.)"
+],
+"groundtruth_sensor": [
+"CAN communication line"
+],
+"expected_output": "DTC U1000, U1001 (CAN communication line) is detected when: When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001). Possible cause(s) per the manual: Harness or connectors (CAN communication line is open or shorted.). This is documented under \"DTC U1000, U1001 CAN COMMUNICATION LINE\" (EC-142) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC002",
+"dtc": "U1000, U1001",
+"trouble_diagnosis_name": "CAN communication line",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC U1000, U1001 CAN COMMUNICATION LINE",
+"manual_reference": "EC-142",
+"query": "What does DTC U1001 indicate about the CAN communication line?",
+"context": "DTC U1000, U1001 CAN COMMUNICATION LINE\nOn Board Diagnosis Logic\nDTC No.: U1000, U1001    Trouble diagnosis name: CAN communication line\nDTC detecting condition: When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001).\nPossible cause:\n  • Harness or connectors (CAN communication line is open or shorted.)\n(Reference: EC-142, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001).",
+"groundtruth_cause": [
+"Harness or connectors (CAN communication line is open or shorted.)"
+],
+"groundtruth_sensor": [
+"CAN communication line"
+],
+"expected_output": "DTC U1000, U1001 (CAN communication line) is detected when: When ECM is not transmitting or receiving CAN communication signal of OBD (emission related diagnosis) for 2 seconds or more (U1000). When ECM is not transmitting or receiving CAN communication signal other than OBD (emission-related diagnosis) for 2 seconds or more (U1001). Possible cause(s) per the manual: Harness or connectors (CAN communication line is open or shorted.). This is documented under \"DTC U1000, U1001 CAN COMMUNICATION LINE\" (EC-142) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC003",
+"dtc": "U1010",
+"trouble_diagnosis_name": "CAN communication bus",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC U1010 CAN COMMUNICATION",
+"manual_reference": "EC-144",
+"query": "DTC U1010 is detected during the initial diagnosis of the CAN controller of ECM. What is the possible cause?",
+"context": "DTC U1010 CAN COMMUNICATION\nOn Board Diagnosis Logic\nDTC No.: U1010    Trouble diagnosis name: CAN communication bus\nDTC detecting condition: When detecting error during the initial diagnosis of CAN controller of ECM.\nPossible cause:\n  • ECM\n(Reference: EC-144, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "When detecting error during the initial diagnosis of CAN controller of ECM.",
+"groundtruth_cause": [
+"ECM"
+],
+"groundtruth_sensor": [
+"ECM"
+],
+"expected_output": "DTC U1010 (CAN communication bus) is detected when: When detecting error during the initial diagnosis of CAN controller of ECM. Possible cause(s) per the manual: ECM. This is documented under \"DTC U1010 CAN COMMUNICATION\" (EC-144) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECU",
+"PCM",
+"engine control unit"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC004",
+"dtc": "U1010",
+"trouble_diagnosis_name": "CAN communication bus",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC U1010 CAN COMMUNICATION",
+"manual_reference": "EC-144",
+"query": "What is the trouble diagnosis name and possible cause for DTC U1010?",
+"context": "DTC U1010 CAN COMMUNICATION\nOn Board Diagnosis Logic\nDTC No.: U1010    Trouble diagnosis name: CAN communication bus\nDTC detecting condition: When detecting error during the initial diagnosis of CAN controller of ECM.\nPossible cause:\n  • ECM\n(Reference: EC-144, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "When detecting error during the initial diagnosis of CAN controller of ECM.",
+"groundtruth_cause": [
+"ECM"
+],
+"groundtruth_sensor": [
+"ECM"
+],
+"expected_output": "DTC U1010 (CAN communication bus) is detected when: When detecting error during the initial diagnosis of CAN controller of ECM. Possible cause(s) per the manual: ECM. This is documented under \"DTC U1010 CAN COMMUNICATION\" (EC-144) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECU",
+"PCM",
+"engine control unit"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC005",
+"dtc": "P0011",
+"trouble_diagnosis_name": "Intake valve timing control performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0011 IVT CONTROL",
+"manual_reference": "EC-146",
+"query": "There is a gap between the target angle and the phase-control angle degree of the intake valve timing control. What DTC does this set and what are the possible causes?",
+"context": "DTC P0011 IVT CONTROL\nOn Board Diagnosis Logic\nDTC No.: P0011    Trouble diagnosis name: Intake valve timing control performance\nDTC detecting condition: There is a gap between angle of target and phase-control angle degree.\nPossible cause:\n  • Crankshaft position sensor (POS)\n  • Camshaft position sensor (PHASE)\n  • Intake valve timing control solenoid valve\n  • Accumulation of debris to the signal pick-up portion of the camshaft\n  • Timing chain installation\n  • Foreign matter caught in the oil groove for intake valve timing control\n(Reference: EC-146, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "There is a gap between angle of target and phase-control angle degree.",
+"groundtruth_cause": [
+"Crankshaft position sensor (POS)",
+"Camshaft position sensor (PHASE)",
+"Intake valve timing control solenoid valve",
+"Accumulation of debris to the signal pick-up portion of the camshaft",
+"Timing chain installation",
+"Foreign matter caught in the oil groove for intake valve timing control"
+],
+"groundtruth_sensor": [
+"Crankshaft position sensor (POS)",
+"Camshaft position sensor (PHASE)"
+],
+"expected_output": "DTC P0011 (Intake valve timing control performance) is detected when: There is a gap between angle of target and phase-control angle degree. Possible cause(s) per the manual: Crankshaft position sensor (POS); Camshaft position sensor (PHASE); Intake valve timing control solenoid valve; Accumulation of debris to the signal pick-up portion of the camshaft; Timing chain installation; Foreign matter caught in the oil groove for intake valve timing control. This is documented under \"DTC P0011 IVT CONTROL\" (EC-146) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"CKP sensor",
+"CKPS",
+"CMP sensor",
+"CMPS",
+"cam sensor",
+"camshaft sensor",
+"crank sensor",
+"crankshaft sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC006",
+"dtc": "P0011",
+"trouble_diagnosis_name": "Intake valve timing control performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0011 IVT CONTROL",
+"manual_reference": "EC-146",
+"query": "What sensors are listed as a possible cause for DTC P0011 intake valve timing control performance?",
+"context": "DTC P0011 IVT CONTROL\nOn Board Diagnosis Logic\nDTC No.: P0011    Trouble diagnosis name: Intake valve timing control performance\nDTC detecting condition: There is a gap between angle of target and phase-control angle degree.\nPossible cause:\n  • Crankshaft position sensor (POS)\n  • Camshaft position sensor (PHASE)\n  • Intake valve timing control solenoid valve\n  • Accumulation of debris to the signal pick-up portion of the camshaft\n  • Timing chain installation\n  • Foreign matter caught in the oil groove for intake valve timing control\n(Reference: EC-146, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "There is a gap between angle of target and phase-control angle degree.",
+"groundtruth_cause": [
+"Crankshaft position sensor (POS)",
+"Camshaft position sensor (PHASE)",
+"Intake valve timing control solenoid valve",
+"Accumulation of debris to the signal pick-up portion of the camshaft",
+"Timing chain installation",
+"Foreign matter caught in the oil groove for intake valve timing control"
+],
+"groundtruth_sensor": [
+"Crankshaft position sensor (POS)",
+"Camshaft position sensor (PHASE)"
+],
+"expected_output": "DTC P0011 (Intake valve timing control performance) is detected when: There is a gap between angle of target and phase-control angle degree. Possible cause(s) per the manual: Crankshaft position sensor (POS); Camshaft position sensor (PHASE); Intake valve timing control solenoid valve; Accumulation of debris to the signal pick-up portion of the camshaft; Timing chain installation; Foreign matter caught in the oil groove for intake valve timing control. This is documented under \"DTC P0011 IVT CONTROL\" (EC-146) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"CKP sensor",
+"CKPS",
+"CMP sensor",
+"CMPS",
+"cam sensor",
+"camshaft sensor",
+"crank sensor",
+"crankshaft sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC007",
+"dtc": "P0037",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 heater control circuit low",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0037, P0038 HO2S2 HEATER",
+"manual_reference": "EC-154",
+"query": "An excessively low voltage signal is sent to the ECM through the heated oxygen sensor 2 heater. Which DTC is this and what is the possible cause?",
+"context": "DTC P0037, P0038 HO2S2 HEATER\nOn Board Diagnosis Logic\nDTC No.: P0037    Trouble diagnosis name: Heated oxygen sensor 2 heater control circuit low\nDTC detecting condition: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.)\n  • Heated oxygen sensor 2 heater\n(Reference: EC-154, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.)",
+"Heated oxygen sensor 2 heater"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2 heater"
+],
+"expected_output": "DTC P0037 (Heated oxygen sensor 2 heater control circuit low) is detected when: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.) Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.); Heated oxygen sensor 2 heater. This is documented under \"DTC P0037, P0038 HO2S2 HEATER\" (EC-154) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC008",
+"dtc": "P0037",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 heater control circuit low",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0037, P0038 HO2S2 HEATER",
+"manual_reference": "EC-154",
+"query": "What is the groundtruth sensor for DTC P0037?",
+"context": "DTC P0037, P0038 HO2S2 HEATER\nOn Board Diagnosis Logic\nDTC No.: P0037    Trouble diagnosis name: Heated oxygen sensor 2 heater control circuit low\nDTC detecting condition: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.)\n  • Heated oxygen sensor 2 heater\n(Reference: EC-154, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.)",
+"Heated oxygen sensor 2 heater"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2 heater"
+],
+"expected_output": "DTC P0037 (Heated oxygen sensor 2 heater control circuit low) is detected when: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively low voltage signal is sent to ECM through the heated oxygen sensor 2 heater.) Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 heater circuit is open or shorted.); Heated oxygen sensor 2 heater. This is documented under \"DTC P0037, P0038 HO2S2 HEATER\" (EC-154) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC009",
+"dtc": "P0038",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 heater control circuit high",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0037, P0038 HO2S2 HEATER",
+"manual_reference": "EC-154",
+"query": "An excessively high voltage signal is sent to the ECM through the heated oxygen sensor 2 heater. What is the possible cause according to the manual?",
+"context": "DTC P0037, P0038 HO2S2 HEATER\nOn Board Diagnosis Logic\nDTC No.: P0038    Trouble diagnosis name: Heated oxygen sensor 2 heater control circuit high\nDTC detecting condition: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.)\n  • Heated oxygen sensor 2 heater\n(Reference: EC-154, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.)",
+"Heated oxygen sensor 2 heater"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2 heater"
+],
+"expected_output": "DTC P0038 (Heated oxygen sensor 2 heater control circuit high) is detected when: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.) Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.); Heated oxygen sensor 2 heater. This is documented under \"DTC P0037, P0038 HO2S2 HEATER\" (EC-154) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC010",
+"dtc": "P0038",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 heater control circuit high",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0037, P0038 HO2S2 HEATER",
+"manual_reference": "EC-154",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0038 (Heated oxygen sensor 2 heater control circuit high)?",
+"context": "DTC P0037, P0038 HO2S2 HEATER\nOn Board Diagnosis Logic\nDTC No.: P0038    Trouble diagnosis name: Heated oxygen sensor 2 heater control circuit high\nDTC detecting condition: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.)\n  • Heated oxygen sensor 2 heater\n(Reference: EC-154, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.)",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.)",
+"Heated oxygen sensor 2 heater"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2 heater"
+],
+"expected_output": "DTC P0038 (Heated oxygen sensor 2 heater control circuit high) is detected when: The current amperage in the heated oxygen sensor 2 heater circuit is out of the normal range. (An excessively high voltage signal is sent to ECM through the heated oxygen sensor 2 heater.) Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 heater circuit is shorted.); Heated oxygen sensor 2 heater. This is documented under \"DTC P0037, P0038 HO2S2 HEATER\" (EC-154) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC011",
+"dtc": "P0075",
+"trouble_diagnosis_name": "Intake valve timing control solenoid valve circuit",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0075 IVT CONTROL SOLENOID VALVE",
+"manual_reference": "EC-160",
+"query": "An improper voltage is sent to the ECM through the intake valve timing control solenoid valve. What DTC is set and what is the possible cause?",
+"context": "DTC P0075 IVT CONTROL SOLENOID VALVE\nOn Board Diagnosis Logic\nDTC No.: P0075    Trouble diagnosis name: Intake valve timing control solenoid valve circuit\nDTC detecting condition: An improper voltage is sent to the ECM through intake valve timing control solenoid valve.\nPossible cause:\n  • Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.)\n  • Intake valve timing control solenoid valve\n(Reference: EC-160, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An improper voltage is sent to the ECM through intake valve timing control solenoid valve.",
+"groundtruth_cause": [
+"Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.)",
+"Intake valve timing control solenoid valve"
+],
+"groundtruth_sensor": [
+"Intake valve timing control solenoid valve"
+],
+"expected_output": "DTC P0075 (Intake valve timing control solenoid valve circuit) is detected when: An improper voltage is sent to the ECM through intake valve timing control solenoid valve. Possible cause(s) per the manual: Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.); Intake valve timing control solenoid valve. This is documented under \"DTC P0075 IVT CONTROL SOLENOID VALVE\" (EC-160) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"VTC solenoid",
+"cam timing solenoid"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC012",
+"dtc": "P0075",
+"trouble_diagnosis_name": "Intake valve timing control solenoid valve circuit",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0075 IVT CONTROL SOLENOID VALVE",
+"manual_reference": "EC-160",
+"query": "What is the trouble diagnosis name of DTC P0075?",
+"context": "DTC P0075 IVT CONTROL SOLENOID VALVE\nOn Board Diagnosis Logic\nDTC No.: P0075    Trouble diagnosis name: Intake valve timing control solenoid valve circuit\nDTC detecting condition: An improper voltage is sent to the ECM through intake valve timing control solenoid valve.\nPossible cause:\n  • Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.)\n  • Intake valve timing control solenoid valve\n(Reference: EC-160, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An improper voltage is sent to the ECM through intake valve timing control solenoid valve.",
+"groundtruth_cause": [
+"Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.)",
+"Intake valve timing control solenoid valve"
+],
+"groundtruth_sensor": [
+"Intake valve timing control solenoid valve"
+],
+"expected_output": "DTC P0075 (Intake valve timing control solenoid valve circuit) is detected when: An improper voltage is sent to the ECM through intake valve timing control solenoid valve. Possible cause(s) per the manual: Harness or connectors (Intake valve timing control solenoid valve circuit is open or shorted.); Intake valve timing control solenoid valve. This is documented under \"DTC P0075 IVT CONTROL SOLENOID VALVE\" (EC-160) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"VTC solenoid",
+"cam timing solenoid"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC013",
+"dtc": "P0101",
+"trouble_diagnosis_name": "Mass air flow sensor circuit range/performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0101 MAF SENSOR",
+"manual_reference": "EC-165",
+"query": "A high voltage from the sensor is sent to the ECM under light load driving condition. What DTC does this correspond to and what is the possible cause?",
+"context": "DTC P0101 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0101    Trouble diagnosis name: Mass air flow sensor circuit range/performance\nDTC detecting condition: A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Mass air flow sensor\n  • EVAP control system pressure sensor\n  • Intake air temperature sensor\n  • Intake air leaks\n(Reference: EC-165, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Mass air flow sensor",
+"EVAP control system pressure sensor",
+"Intake air temperature sensor",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0101 (Mass air flow sensor circuit range/performance) is detected when: A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Mass air flow sensor; EVAP control system pressure sensor; Intake air temperature sensor; Intake air leaks. This is documented under \"DTC P0101 MAF SENSOR\" (EC-165) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC014",
+"dtc": "P0101",
+"trouble_diagnosis_name": "Mass air flow sensor circuit range/performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0101 MAF SENSOR",
+"manual_reference": "EC-165",
+"query": "What are the possible causes listed in the manual for DTC P0101 mass air flow sensor circuit range/performance?",
+"context": "DTC P0101 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0101    Trouble diagnosis name: Mass air flow sensor circuit range/performance\nDTC detecting condition: A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Mass air flow sensor\n  • EVAP control system pressure sensor\n  • Intake air temperature sensor\n  • Intake air leaks\n(Reference: EC-165, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Mass air flow sensor",
+"EVAP control system pressure sensor",
+"Intake air temperature sensor",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0101 (Mass air flow sensor circuit range/performance) is detected when: A) A high voltage from the sensor is sent to ECM under light load driving condition. B) A low voltage from the sensor is sent to ECM under heavy load driving condition. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Mass air flow sensor; EVAP control system pressure sensor; Intake air temperature sensor; Intake air leaks. This is documented under \"DTC P0101 MAF SENSOR\" (EC-165) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC015",
+"dtc": "P0102",
+"trouble_diagnosis_name": "Mass air flow sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0102, P0103 MAF SENSOR",
+"manual_reference": "EC-173",
+"query": "An excessively low voltage from the sensor is sent to the ECM, and DTC P0102 is displayed. What is the possible cause?",
+"context": "DTC P0102, P0103 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0102    Trouble diagnosis name: Mass air flow sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Intake air leaks\n  • Mass air flow sensor\n(Reference: EC-173, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Intake air leaks",
+"Mass air flow sensor"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0102 (Mass air flow sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Intake air leaks; Mass air flow sensor. This is documented under \"DTC P0102, P0103 MAF SENSOR\" (EC-173) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC016",
+"dtc": "P0102",
+"trouble_diagnosis_name": "Mass air flow sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0102, P0103 MAF SENSOR",
+"manual_reference": "EC-173",
+"query": "According to the manual, what is the fail-safe engine operating condition when the mass air flow sensor circuit malfunction is detected?",
+"context": "DTC P0102, P0103 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0102    Trouble diagnosis name: Mass air flow sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Intake air leaks\n  • Mass air flow sensor\n(Reference: EC-173, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Intake air leaks",
+"Mass air flow sensor"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0102 (Mass air flow sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Intake air leaks; Mass air flow sensor. This is documented under \"DTC P0102, P0103 MAF SENSOR\" (EC-173) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC017",
+"dtc": "P0103",
+"trouble_diagnosis_name": "Mass air flow sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0102, P0103 MAF SENSOR",
+"manual_reference": "EC-173",
+"query": "What is the DTC detecting condition and possible cause for DTC P0103 mass air flow sensor circuit high input?",
+"context": "DTC P0102, P0103 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0103    Trouble diagnosis name: Mass air flow sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Mass air flow sensor\n(Reference: EC-173, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Mass air flow sensor"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0103 (Mass air flow sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Mass air flow sensor. This is documented under \"DTC P0102, P0103 MAF SENSOR\" (EC-173) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC018",
+"dtc": "P0103",
+"trouble_diagnosis_name": "Mass air flow sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0102, P0103 MAF SENSOR",
+"manual_reference": "EC-173",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0103 (Mass air flow sensor circuit high input)?",
+"context": "DTC P0102, P0103 MAF SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0103    Trouble diagnosis name: Mass air flow sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Mass air flow sensor circuit is open or shorted.)\n  • Mass air flow sensor\n(Reference: EC-173, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Mass air flow sensor circuit is open or shorted.)",
+"Mass air flow sensor"
+],
+"groundtruth_sensor": [
+"Mass air flow sensor"
+],
+"expected_output": "DTC P0103 (Mass air flow sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Mass air flow sensor circuit is open or shorted.); Mass air flow sensor. This is documented under \"DTC P0102, P0103 MAF SENSOR\" (EC-173) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"MAF sensor",
+"air flow meter",
+"airflow sensor",
+"mass flow sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC019",
+"dtc": "P0112",
+"trouble_diagnosis_name": "Intake air temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0112, P0113 IAT SENSOR",
+"manual_reference": "EC-180",
+"query": "An excessively low voltage from the sensor is sent to the ECM. Which intake-air-related DTC is this and what is the possible cause?",
+"context": "DTC P0112, P0113 IAT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0112    Trouble diagnosis name: Intake air temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Intake air temperature sensor circuit is open or shorted.)\n  • Intake air temperature sensor\n(Reference: EC-180, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Intake air temperature sensor circuit is open or shorted.)",
+"Intake air temperature sensor"
+],
+"groundtruth_sensor": [
+"Intake air temperature sensor"
+],
+"expected_output": "DTC P0112 (Intake air temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Intake air temperature sensor circuit is open or shorted.); Intake air temperature sensor. This is documented under \"DTC P0112, P0113 IAT SENSOR\" (EC-180) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"IAT sensor",
+"air intake temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC020",
+"dtc": "P0112",
+"trouble_diagnosis_name": "Intake air temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0112, P0113 IAT SENSOR",
+"manual_reference": "EC-180",
+"query": "What sensor is built into the mass air flow sensor according to the DTC P0112, P0113 IAT SENSOR component description?",
+"context": "DTC P0112, P0113 IAT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0112    Trouble diagnosis name: Intake air temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Intake air temperature sensor circuit is open or shorted.)\n  • Intake air temperature sensor\n(Reference: EC-180, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Intake air temperature sensor circuit is open or shorted.)",
+"Intake air temperature sensor"
+],
+"groundtruth_sensor": [
+"Intake air temperature sensor"
+],
+"expected_output": "DTC P0112 (Intake air temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Intake air temperature sensor circuit is open or shorted.); Intake air temperature sensor. This is documented under \"DTC P0112, P0113 IAT SENSOR\" (EC-180) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"IAT sensor",
+"air intake temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC021",
+"dtc": "P0113",
+"trouble_diagnosis_name": "Intake air temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0112, P0113 IAT SENSOR",
+"manual_reference": "EC-180",
+"query": "What is the possible cause for DTC P0113 intake air temperature sensor circuit high input?",
+"context": "DTC P0112, P0113 IAT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0113    Trouble diagnosis name: Intake air temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Intake air temperature sensor circuit is open or shorted.)\n  • Intake air temperature sensor\n(Reference: EC-180, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Intake air temperature sensor circuit is open or shorted.)",
+"Intake air temperature sensor"
+],
+"groundtruth_sensor": [
+"Intake air temperature sensor"
+],
+"expected_output": "DTC P0113 (Intake air temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Intake air temperature sensor circuit is open or shorted.); Intake air temperature sensor. This is documented under \"DTC P0112, P0113 IAT SENSOR\" (EC-180) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"IAT sensor",
+"air intake temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC022",
+"dtc": "P0113",
+"trouble_diagnosis_name": "Intake air temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0112, P0113 IAT SENSOR",
+"manual_reference": "EC-180",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0113 (Intake air temperature sensor circuit high input)?",
+"context": "DTC P0112, P0113 IAT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0113    Trouble diagnosis name: Intake air temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Intake air temperature sensor circuit is open or shorted.)\n  • Intake air temperature sensor\n(Reference: EC-180, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Intake air temperature sensor circuit is open or shorted.)",
+"Intake air temperature sensor"
+],
+"groundtruth_sensor": [
+"Intake air temperature sensor"
+],
+"expected_output": "DTC P0113 (Intake air temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Intake air temperature sensor circuit is open or shorted.); Intake air temperature sensor. This is documented under \"DTC P0112, P0113 IAT SENSOR\" (EC-180) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"IAT sensor",
+"air intake temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC023",
+"dtc": "P0117",
+"trouble_diagnosis_name": "Engine coolant temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0117, P0118 ECT SENSOR",
+"manual_reference": "EC-184",
+"query": "An excessively low voltage from the sensor is sent to the ECM for the engine coolant temperature circuit. What DTC and possible cause does the manual list?",
+"context": "DTC P0117, P0118 ECT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0117    Trouble diagnosis name: Engine coolant temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)\n  • Engine coolant temperature sensor\n(Reference: EC-184, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0117 (Engine coolant temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.); Engine coolant temperature sensor. This is documented under \"DTC P0117, P0118 ECT SENSOR\" (EC-184) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC024",
+"dtc": "P0117",
+"trouble_diagnosis_name": "Engine coolant temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0117, P0118 ECT SENSOR",
+"manual_reference": "EC-184",
+"query": "What engine coolant temperature will the ECM decide on and display on CONSULT-III just as the ignition switch is turned ON, in fail-safe mode for DTC P0117/P0118?",
+"context": "DTC P0117, P0118 ECT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0117    Trouble diagnosis name: Engine coolant temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)\n  • Engine coolant temperature sensor\n(Reference: EC-184, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0117 (Engine coolant temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.); Engine coolant temperature sensor. This is documented under \"DTC P0117, P0118 ECT SENSOR\" (EC-184) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC025",
+"dtc": "P0118",
+"trouble_diagnosis_name": "Engine coolant temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0117, P0118 ECT SENSOR",
+"manual_reference": "EC-184",
+"query": "What is the possible cause of DTC P0118 engine coolant temperature sensor circuit high input?",
+"context": "DTC P0117, P0118 ECT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0118    Trouble diagnosis name: Engine coolant temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)\n  • Engine coolant temperature sensor\n(Reference: EC-184, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0118 (Engine coolant temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.); Engine coolant temperature sensor. This is documented under \"DTC P0117, P0118 ECT SENSOR\" (EC-184) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC026",
+"dtc": "P0118",
+"trouble_diagnosis_name": "Engine coolant temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0117, P0118 ECT SENSOR",
+"manual_reference": "EC-184",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0118 (Engine coolant temperature sensor circuit high input)?",
+"context": "DTC P0117, P0118 ECT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0118    Trouble diagnosis name: Engine coolant temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)\n  • Engine coolant temperature sensor\n(Reference: EC-184, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.)",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0118 (Engine coolant temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Engine coolant temperature sensor circuit is open or shorted.); Engine coolant temperature sensor. This is documented under \"DTC P0117, P0118 ECT SENSOR\" (EC-184) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC027",
+"dtc": "P0122",
+"trouble_diagnosis_name": "Throttle position sensor 2 circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0122, P0123 TP SENSOR",
+"manual_reference": "EC-189",
+"query": "An excessively low voltage from the TP sensor 2 is sent to the ECM. What is the DTC and its possible cause?",
+"context": "DTC P0122, P0123 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0122    Trouble diagnosis name: Throttle position sensor 2 circuit low input\nDTC detecting condition: An excessively low voltage from the TP sensor 2 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 2 circuit is open or shorted.)\n  • Electric throttle control actuator (TP sensor 2)\n(Reference: EC-189, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the TP sensor 2 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 2 circuit is open or shorted.)",
+"Electric throttle control actuator (TP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 2"
+],
+"expected_output": "DTC P0122 (Throttle position sensor 2 circuit low input) is detected when: An excessively low voltage from the TP sensor 2 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 2 circuit is open or shorted.); Electric throttle control actuator (TP sensor 2). This is documented under \"DTC P0122, P0123 TP SENSOR\" (EC-189) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 2",
+"TPS2"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC028",
+"dtc": "P0122",
+"trouble_diagnosis_name": "Throttle position sensor 2 circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0122, P0123 TP SENSOR",
+"manual_reference": "EC-189",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0122 (Throttle position sensor 2 circuit low input)?",
+"context": "DTC P0122, P0123 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0122    Trouble diagnosis name: Throttle position sensor 2 circuit low input\nDTC detecting condition: An excessively low voltage from the TP sensor 2 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 2 circuit is open or shorted.)\n  • Electric throttle control actuator (TP sensor 2)\n(Reference: EC-189, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the TP sensor 2 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 2 circuit is open or shorted.)",
+"Electric throttle control actuator (TP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 2"
+],
+"expected_output": "DTC P0122 (Throttle position sensor 2 circuit low input) is detected when: An excessively low voltage from the TP sensor 2 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 2 circuit is open or shorted.); Electric throttle control actuator (TP sensor 2). This is documented under \"DTC P0122, P0123 TP SENSOR\" (EC-189) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 2",
+"TPS2"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC029",
+"dtc": "P0123",
+"trouble_diagnosis_name": "Throttle position sensor 2 circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0122, P0123 TP SENSOR",
+"manual_reference": "EC-189",
+"query": "What is the possible cause listed for DTC P0123 throttle position sensor 2 circuit high input?",
+"context": "DTC P0122, P0123 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0123    Trouble diagnosis name: Throttle position sensor 2 circuit high input\nDTC detecting condition: An excessively high voltage from the TP sensor 2 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 2 circuit is open or shorted.)\n  • Electric throttle control actuator (TP sensor 2)\n(Reference: EC-189, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the TP sensor 2 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 2 circuit is open or shorted.)",
+"Electric throttle control actuator (TP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 2"
+],
+"expected_output": "DTC P0123 (Throttle position sensor 2 circuit high input) is detected when: An excessively high voltage from the TP sensor 2 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 2 circuit is open or shorted.); Electric throttle control actuator (TP sensor 2). This is documented under \"DTC P0122, P0123 TP SENSOR\" (EC-189) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 2",
+"TPS2"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC030",
+"dtc": "P0123",
+"trouble_diagnosis_name": "Throttle position sensor 2 circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0122, P0123 TP SENSOR",
+"manual_reference": "EC-189",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0123 (Throttle position sensor 2 circuit high input)?",
+"context": "DTC P0122, P0123 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0123    Trouble diagnosis name: Throttle position sensor 2 circuit high input\nDTC detecting condition: An excessively high voltage from the TP sensor 2 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 2 circuit is open or shorted.)\n  • Electric throttle control actuator (TP sensor 2)\n(Reference: EC-189, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the TP sensor 2 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 2 circuit is open or shorted.)",
+"Electric throttle control actuator (TP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 2"
+],
+"expected_output": "DTC P0123 (Throttle position sensor 2 circuit high input) is detected when: An excessively high voltage from the TP sensor 2 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 2 circuit is open or shorted.); Electric throttle control actuator (TP sensor 2). This is documented under \"DTC P0122, P0123 TP SENSOR\" (EC-189) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 2",
+"TPS2"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC031",
+"dtc": "P0128",
+"trouble_diagnosis_name": "Thermostat function",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0128 THERMOSTAT FUNCTION",
+"manual_reference": "EC-200",
+"query": "The engine coolant temperature does not reach the specified temperature even though the engine has run long enough. What DTC is set and what could be the cause?",
+"context": "DTC P0128 THERMOSTAT FUNCTION\nOn Board Diagnosis Logic\nDTC No.: P0128    Trouble diagnosis name: Thermostat function\nDTC detecting condition: The engine coolant temperature does not reach to specified temperature even though the engine has run long enough.\nPossible cause:\n  • Thermostat\n  • Leakage from sealing portion of thermostat\n  • Engine coolant temperature sensor\n(Reference: EC-200, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The engine coolant temperature does not reach to specified temperature even though the engine has run long enough.",
+"groundtruth_cause": [
+"Thermostat",
+"Leakage from sealing portion of thermostat",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0128 (Thermostat function) is detected when: The engine coolant temperature does not reach to specified temperature even though the engine has run long enough. Possible cause(s) per the manual: Thermostat; Leakage from sealing portion of thermostat; Engine coolant temperature sensor. This is documented under \"DTC P0128 THERMOSTAT FUNCTION\" (EC-200) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC032",
+"dtc": "P0128",
+"trouble_diagnosis_name": "Thermostat function",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0128 THERMOSTAT FUNCTION",
+"manual_reference": "EC-200",
+"query": "What causes DTC P0128 thermostat function according to the manual?",
+"context": "DTC P0128 THERMOSTAT FUNCTION\nOn Board Diagnosis Logic\nDTC No.: P0128    Trouble diagnosis name: Thermostat function\nDTC detecting condition: The engine coolant temperature does not reach to specified temperature even though the engine has run long enough.\nPossible cause:\n  • Thermostat\n  • Leakage from sealing portion of thermostat\n  • Engine coolant temperature sensor\n(Reference: EC-200, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The engine coolant temperature does not reach to specified temperature even though the engine has run long enough.",
+"groundtruth_cause": [
+"Thermostat",
+"Leakage from sealing portion of thermostat",
+"Engine coolant temperature sensor"
+],
+"groundtruth_sensor": [
+"Engine coolant temperature sensor"
+],
+"expected_output": "DTC P0128 (Thermostat function) is detected when: The engine coolant temperature does not reach to specified temperature even though the engine has run long enough. Possible cause(s) per the manual: Thermostat; Leakage from sealing portion of thermostat; Engine coolant temperature sensor. This is documented under \"DTC P0128 THERMOSTAT FUNCTION\" (EC-200) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"ECT sensor",
+"coolant temp sensor",
+"water temperature sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC033",
+"dtc": "P0130",
+"trouble_diagnosis_name": "Air fuel ratio (A/F) sensor 1 circuit",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0130 A/F SENSOR 1",
+"manual_reference": "EC-202",
+"query": "The A/F signal computed by ECM from the air fuel ratio (A/F) sensor 1 signal is constantly approx. 2.2V. What DTC does this indicate and what is the possible cause?",
+"context": "DTC P0130 A/F SENSOR 1\nOn Board Diagnosis Logic\nDTC No.: P0130    Trouble diagnosis name: Air fuel ratio (A/F) sensor 1 circuit\nDTC detecting condition: A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V.\nPossible cause:\n  • Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]\n  • Air fuel ratio (A/F) sensor 1\n(Reference: EC-202, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V.",
+"groundtruth_cause": [
+"Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]",
+"Air fuel ratio (A/F) sensor 1"
+],
+"groundtruth_sensor": [
+"Air fuel ratio (A/F) sensor 1"
+],
+"expected_output": "DTC P0130 (Air fuel ratio (A/F) sensor 1 circuit) is detected when: A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V. Possible cause(s) per the manual: Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]; Air fuel ratio (A/F) sensor 1. This is documented under \"DTC P0130 A/F SENSOR 1\" (EC-202) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"A/F sensor",
+"AFR sensor",
+"front oxygen sensor",
+"wideband sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC034",
+"dtc": "P0130",
+"trouble_diagnosis_name": "Air fuel ratio (A/F) sensor 1 circuit",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0130 A/F SENSOR 1",
+"manual_reference": "EC-202",
+"query": "What is the groundtruth sensor associated with DTC P0130?",
+"context": "DTC P0130 A/F SENSOR 1\nOn Board Diagnosis Logic\nDTC No.: P0130    Trouble diagnosis name: Air fuel ratio (A/F) sensor 1 circuit\nDTC detecting condition: A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V.\nPossible cause:\n  • Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]\n  • Air fuel ratio (A/F) sensor 1\n(Reference: EC-202, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V.",
+"groundtruth_cause": [
+"Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]",
+"Air fuel ratio (A/F) sensor 1"
+],
+"groundtruth_sensor": [
+"Air fuel ratio (A/F) sensor 1"
+],
+"expected_output": "DTC P0130 (Air fuel ratio (A/F) sensor 1 circuit) is detected when: A) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly in the range other than approx. 2.2V. B) The A/F signal computed by ECM from the A/F sensor 1 signal is constantly approx. 2.2V. Possible cause(s) per the manual: Harness or connectors [Air fuel ratio (A/F) sensor 1 circuit is open or shorted.]; Air fuel ratio (A/F) sensor 1. This is documented under \"DTC P0130 A/F SENSOR 1\" (EC-202) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"A/F sensor",
+"AFR sensor",
+"front oxygen sensor",
+"wideband sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC035",
+"dtc": "P0137",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit low voltage",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0137 HO2S2",
+"manual_reference": "EC-227",
+"query": "The maximum voltage from the sensor does not reach the specified voltage. What DTC and possible causes does the manual list for the heated oxygen sensor 2 circuit?",
+"context": "DTC P0137 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0137    Trouble diagnosis name: Heated oxygen sensor 2 circuit low voltage\nDTC detecting condition: The maximum voltage from the sensor is not reached to the specified voltage.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n  • Intake air leaks\n(Reference: EC-227, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The maximum voltage from the sensor is not reached to the specified voltage.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0137 (Heated oxygen sensor 2 circuit low voltage) is detected when: The maximum voltage from the sensor is not reached to the specified voltage. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector; Intake air leaks. This is documented under \"DTC P0137 HO2S2\" (EC-227) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC036",
+"dtc": "P0137",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit low voltage",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0137 HO2S2",
+"manual_reference": "EC-227",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0137 (Heated oxygen sensor 2 circuit low voltage)?",
+"context": "DTC P0137 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0137    Trouble diagnosis name: Heated oxygen sensor 2 circuit low voltage\nDTC detecting condition: The maximum voltage from the sensor is not reached to the specified voltage.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n  • Intake air leaks\n(Reference: EC-227, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "The maximum voltage from the sensor is not reached to the specified voltage.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0137 (Heated oxygen sensor 2 circuit low voltage) is detected when: The maximum voltage from the sensor is not reached to the specified voltage. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 circuit open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector; Intake air leaks. This is documented under \"DTC P0137 HO2S2\" (EC-227) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC037",
+"dtc": "P0138",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit high voltage",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0138 HO2S2",
+"manual_reference": "EC-234",
+"query": "An excessively high voltage from the sensor is sent to the ECM. Which DTC is this and what is a possible cause?",
+"context": "DTC P0138 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0138    Trouble diagnosis name: Heated oxygen sensor 2 circuit high voltage\nDTC detecting condition: A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n(Reference: EC-234, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0138 (Heated oxygen sensor 2 circuit high voltage) is detected when: A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector. This is documented under \"DTC P0138 HO2S2\" (EC-234) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC038",
+"dtc": "P0138",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit high voltage",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0138 HO2S2",
+"manual_reference": "EC-234",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0138 (Heated oxygen sensor 2 circuit high voltage)?",
+"context": "DTC P0138 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0138    Trouble diagnosis name: Heated oxygen sensor 2 circuit high voltage\nDTC detecting condition: A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n(Reference: EC-234, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0138 (Heated oxygen sensor 2 circuit high voltage) is detected when: A) An excessively high voltage from the sensor is sent to ECM. B) The minimum voltage from the sensor is not reached to the specified voltage. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor 2 circuit is open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector. This is documented under \"DTC P0138 HO2S2\" (EC-234) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC039",
+"dtc": "P0139",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit slow response",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0139 HO2S2",
+"manual_reference": "EC-243",
+"query": "It takes more time for the sensor to respond between rich and lean than the specified time. What DTC is this and what is the possible cause?",
+"context": "DTC P0139 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0139    Trouble diagnosis name: Heated oxygen sensor 2 circuit slow response\nDTC detecting condition: It takes more time for the sensor to respond between rich and lean than the specified time.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor circuit is open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n  • Intake air leaks\n(Reference: EC-243, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "It takes more time for the sensor to respond between rich and lean than the specified time.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor circuit is open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0139 (Heated oxygen sensor 2 circuit slow response) is detected when: It takes more time for the sensor to respond between rich and lean than the specified time. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor circuit is open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector; Intake air leaks. This is documented under \"DTC P0139 HO2S2\" (EC-243) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC040",
+"dtc": "P0139",
+"trouble_diagnosis_name": "Heated oxygen sensor 2 circuit slow response",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0139 HO2S2",
+"manual_reference": "EC-243",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0139 (Heated oxygen sensor 2 circuit slow response)?",
+"context": "DTC P0139 HO2S2\nOn Board Diagnosis Logic\nDTC No.: P0139    Trouble diagnosis name: Heated oxygen sensor 2 circuit slow response\nDTC detecting condition: It takes more time for the sensor to respond between rich and lean than the specified time.\nPossible cause:\n  • Harness or connectors (Heated oxygen sensor circuit is open or shorted.)\n  • Heated oxygen sensor 2\n  • Fuel pressure\n  • Fuel injector\n  • Intake air leaks\n(Reference: EC-243, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "It takes more time for the sensor to respond between rich and lean than the specified time.",
+"groundtruth_cause": [
+"Harness or connectors (Heated oxygen sensor circuit is open or shorted.)",
+"Heated oxygen sensor 2",
+"Fuel pressure",
+"Fuel injector",
+"Intake air leaks"
+],
+"groundtruth_sensor": [
+"Heated oxygen sensor 2"
+],
+"expected_output": "DTC P0139 (Heated oxygen sensor 2 circuit slow response) is detected when: It takes more time for the sensor to respond between rich and lean than the specified time. Possible cause(s) per the manual: Harness or connectors (Heated oxygen sensor circuit is open or shorted.); Heated oxygen sensor 2; Fuel pressure; Fuel injector; Intake air leaks. This is documented under \"DTC P0139 HO2S2\" (EC-243) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"HO2S2",
+"O2 sensor 2",
+"rear oxygen sensor",
+"secondary oxygen sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC041",
+"dtc": "P0181",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit range/performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0181 FTT SENSOR",
+"manual_reference": "EC-262",
+"query": "A rationally incorrect voltage from the sensor is sent to the ECM compared with the engine coolant temperature sensor and intake air temperature sensor signals. What DTC is this?",
+"context": "DTC P0181 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0181    Trouble diagnosis name: Fuel tank temperature sensor circuit range/performance\nDTC detecting condition: Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted)\n  • Fuel tank temperature sensor\n(Reference: EC-262, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0181 (Fuel tank temperature sensor circuit range/performance) is detected when: Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted); Fuel tank temperature sensor. This is documented under \"DTC P0181 FTT SENSOR\" (EC-262) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC042",
+"dtc": "P0181",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit range/performance",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0181 FTT SENSOR",
+"manual_reference": "EC-262",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0181 (Fuel tank temperature sensor circuit range/performance)?",
+"context": "DTC P0181 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0181    Trouble diagnosis name: Fuel tank temperature sensor circuit range/performance\nDTC detecting condition: Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted)\n  • Fuel tank temperature sensor\n(Reference: EC-262, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0181 (Fuel tank temperature sensor circuit range/performance) is detected when: Rationally incorrect voltage from the sensor is sent to ECM, compared with the voltage signals from engine coolant temperature sensor and intake air temperature sensor. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted); Fuel tank temperature sensor. This is documented under \"DTC P0181 FTT SENSOR\" (EC-262) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC043",
+"dtc": "P0182",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0182, P0183 FTT SENSOR",
+"manual_reference": "EC-266",
+"query": "What is the possible cause for DTC P0182 fuel tank temperature sensor circuit low input?",
+"context": "DTC P0182, P0183 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0182    Trouble diagnosis name: Fuel tank temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)\n  • Fuel tank temperature sensor\n(Reference: EC-266, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0182 (Fuel tank temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.); Fuel tank temperature sensor. This is documented under \"DTC P0182, P0183 FTT SENSOR\" (EC-266) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC044",
+"dtc": "P0182",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0182, P0183 FTT SENSOR",
+"manual_reference": "EC-266",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0182 (Fuel tank temperature sensor circuit low input)?",
+"context": "DTC P0182, P0183 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0182    Trouble diagnosis name: Fuel tank temperature sensor circuit low input\nDTC detecting condition: An excessively low voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)\n  • Fuel tank temperature sensor\n(Reference: EC-266, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0182 (Fuel tank temperature sensor circuit low input) is detected when: An excessively low voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.); Fuel tank temperature sensor. This is documented under \"DTC P0182, P0183 FTT SENSOR\" (EC-266) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC045",
+"dtc": "P0183",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0182, P0183 FTT SENSOR",
+"manual_reference": "EC-266",
+"query": "What is the DTC detecting condition for DTC P0183 fuel tank temperature sensor circuit high input?",
+"context": "DTC P0182, P0183 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0183    Trouble diagnosis name: Fuel tank temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)\n  • Fuel tank temperature sensor\n(Reference: EC-266, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0183 (Fuel tank temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.); Fuel tank temperature sensor. This is documented under \"DTC P0182, P0183 FTT SENSOR\" (EC-266) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC046",
+"dtc": "P0183",
+"trouble_diagnosis_name": "Fuel tank temperature sensor circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0182, P0183 FTT SENSOR",
+"manual_reference": "EC-266",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0183 (Fuel tank temperature sensor circuit high input)?",
+"context": "DTC P0182, P0183 FTT SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0183    Trouble diagnosis name: Fuel tank temperature sensor circuit high input\nDTC detecting condition: An excessively high voltage from the sensor is sent to ECM.\nPossible cause:\n  • Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)\n  • Fuel tank temperature sensor\n(Reference: EC-266, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the sensor is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.)",
+"Fuel tank temperature sensor"
+],
+"groundtruth_sensor": [
+"Fuel tank temperature sensor"
+],
+"expected_output": "DTC P0183 (Fuel tank temperature sensor circuit high input) is detected when: An excessively high voltage from the sensor is sent to ECM. Possible cause(s) per the manual: Harness or connectors (Fuel tank temperature sensor circuit is open or shorted.); Fuel tank temperature sensor. This is documented under \"DTC P0182, P0183 FTT SENSOR\" (EC-266) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"FTT sensor",
+"fuel temp sensor"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC047",
+"dtc": "P0222",
+"trouble_diagnosis_name": "Throttle position sensor 1 circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0222, P0223 TP SENSOR",
+"manual_reference": "EC-270",
+"query": "An excessively low voltage from the TP sensor 1 is sent to the ECM. What DTC is this and what are the possible causes?",
+"context": "DTC P0222, P0223 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0222    Trouble diagnosis name: Throttle position sensor 1 circuit low input\nDTC detecting condition: An excessively low voltage from the TP sensor 1 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)\n  • Electric throttle control actuator (TP sensor 1)\n  • Accelerator pedal position sensor (APP sensor 2)\n(Reference: EC-270, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the TP sensor 1 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)",
+"Electric throttle control actuator (TP sensor 1)",
+"Accelerator pedal position sensor (APP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 1"
+],
+"expected_output": "DTC P0222 (Throttle position sensor 1 circuit low input) is detected when: An excessively low voltage from the TP sensor 1 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.); Electric throttle control actuator (TP sensor 1); Accelerator pedal position sensor (APP sensor 2). This is documented under \"DTC P0222, P0223 TP SENSOR\" (EC-270) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 1",
+"TPS1"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC048",
+"dtc": "P0222",
+"trouble_diagnosis_name": "Throttle position sensor 1 circuit low input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0222, P0223 TP SENSOR",
+"manual_reference": "EC-270",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0222 (Throttle position sensor 1 circuit low input)?",
+"context": "DTC P0222, P0223 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0222    Trouble diagnosis name: Throttle position sensor 1 circuit low input\nDTC detecting condition: An excessively low voltage from the TP sensor 1 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)\n  • Electric throttle control actuator (TP sensor 1)\n  • Accelerator pedal position sensor (APP sensor 2)\n(Reference: EC-270, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively low voltage from the TP sensor 1 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)",
+"Electric throttle control actuator (TP sensor 1)",
+"Accelerator pedal position sensor (APP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 1"
+],
+"expected_output": "DTC P0222 (Throttle position sensor 1 circuit low input) is detected when: An excessively low voltage from the TP sensor 1 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.); Electric throttle control actuator (TP sensor 1); Accelerator pedal position sensor (APP sensor 2). This is documented under \"DTC P0222, P0223 TP SENSOR\" (EC-270) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 1",
+"TPS1"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC049",
+"dtc": "P0223",
+"trouble_diagnosis_name": "Throttle position sensor 1 circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0222, P0223 TP SENSOR",
+"manual_reference": "EC-270",
+"query": "What is the possible cause listed for DTC P0223 throttle position sensor 1 circuit high input?",
+"context": "DTC P0222, P0223 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0223    Trouble diagnosis name: Throttle position sensor 1 circuit high input\nDTC detecting condition: An excessively high voltage from the TP sensor 1 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)\n  • Electric throttle control actuator (TP sensor 1)\n  • Accelerator pedal position sensor (APP sensor 2)\n(Reference: EC-270, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the TP sensor 1 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)",
+"Electric throttle control actuator (TP sensor 1)",
+"Accelerator pedal position sensor (APP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 1"
+],
+"expected_output": "DTC P0223 (Throttle position sensor 1 circuit high input) is detected when: An excessively high voltage from the TP sensor 1 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.); Electric throttle control actuator (TP sensor 1); Accelerator pedal position sensor (APP sensor 2). This is documented under \"DTC P0222, P0223 TP SENSOR\" (EC-270) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 1",
+"TPS1"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+},
+{
+"id": "TC050",
+"dtc": "P0223",
+"trouble_diagnosis_name": "Throttle position sensor 1 circuit high input",
+"system": "Engine Control System (EC)",
+"manual_section": "DTC P0222, P0223 TP SENSOR",
+"manual_reference": "EC-270",
+"query": "What is the DTC detecting condition and possible cause listed in the manual for DTC P0223 (Throttle position sensor 1 circuit high input)?",
+"context": "DTC P0222, P0223 TP SENSOR\nOn Board Diagnosis Logic\nDTC No.: P0223    Trouble diagnosis name: Throttle position sensor 1 circuit high input\nDTC detecting condition: An excessively high voltage from the TP sensor 1 is sent to ECM.\nPossible cause:\n  • Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)\n  • Electric throttle control actuator (TP sensor 1)\n  • Accelerator pedal position sensor (APP sensor 2)\n(Reference: EC-270, 2008 Sentra Service Manual, Engine Control System (EC) section)",
+"groundtruth_detecting_condition": "An excessively high voltage from the TP sensor 1 is sent to ECM.",
+"groundtruth_cause": [
+"Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.)",
+"Electric throttle control actuator (TP sensor 1)",
+"Accelerator pedal position sensor (APP sensor 2)"
+],
+"groundtruth_sensor": [
+"Throttle position sensor 1"
+],
+"expected_output": "DTC P0223 (Throttle position sensor 1 circuit high input) is detected when: An excessively high voltage from the TP sensor 1 is sent to ECM. Possible cause(s) per the manual: Harness or connectors (TP sensor 1 circuit is open or shorted.) (APP sensor 2 circuit is shorted.); Electric throttle control actuator (TP sensor 1); Accelerator pedal position sensor (APP sensor 2). This is documented under \"DTC P0222, P0223 TP SENSOR\" (EC-270) in the Engine Control System (EC) section.",
+"forbidden_synonym_terms": [
+"TP sensor 1",
+"TPS1"
+],
+"eval_metrics_template": {
+"faithfulness": null,
+"answer_relevancy": null,
+"context_relevancy": null
+},
+"actual_output_fp16": "",
+"actual_output_int4": "",
+"notes": "All sensor names, acronyms and phrasing are copied verbatim from the source manual (Nissan 2008 Sentra EC section). Do not substitute synonyms not used by the manual."
+   }
+  ]
+}

@@ -1,3 +1,4 @@
+from curses import raw
 import os
 import json
 import re
@@ -20,14 +21,15 @@ from deepeval.metrics import (
 from deepeval.models import OllamaModel
 
 # Configuration Paths
-DATASET_PATH = Path("nissan dtc rag eval dataset.json")
+DATASET_PATH = Path("nissan_dtc_rag_eval_dataset.json")
 DB_PATH = "lancedb"
 TABLE_NAME = "onboard_slm_chunks"
 
 # Initialize Local DeepEval Judge Model
 eval_model = OllamaModel(
-    model="llama3.2:3b",
-    base_url="http://localhost:11434"
+    model="llama3.2:3b-judge",
+    base_url="http://localhost:11434",
+    temperature=0.0,
 )
 
 
@@ -85,14 +87,14 @@ def run_single_query(query: str):
 
 def build_evaluation_batch():
     with open(DATASET_PATH, "r", encoding="utf-8-sig") as f:
-        dataset = json.load(f)
-
+        raw = json.load(f)
+    dataset= raw["test_cases"] if isinstance(raw , dict) and "test_cases" in raw else raw
     test_cases = []
     print(f"Executing RAG pipeline for {len(dataset)} scenarios in dataset.json...")
 
     for idx, case in enumerate(dataset, 1):
         query = case["query"]
-        expected_output = f"DTC {case['dtc_code']} caused by: " + ", ".join(case["ground_truth_causes"])
+        expected_output = f"DTC {case['dtc']} caused by: " + ", ".join(case["groundtruth_cause"])
 
         actual_output, retrieved_chunks = run_single_query(query)
 
@@ -103,7 +105,7 @@ def build_evaluation_batch():
             retrieval_context=retrieved_chunks
         )
         test_cases.append(tc)
-        print(f" -> Processed [{idx}/{len(dataset)}] DTC: {case['dtc_code']}")
+        print(f" -> Processed [{idx}/{len(dataset)}] DTC: {case['dtc']}")
 
     return test_cases
 

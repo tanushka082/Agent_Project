@@ -145,3 +145,6 @@ if __name__ == "__main__":
     result = agent.run(test_dtc, test_manual, test_telemetry)
     print("\n--- STANDALONE REASONING AGENT OUTPUT ---")
     print(json.dumps(result, indent=2))
+
+
+    
