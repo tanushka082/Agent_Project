@@ -79,8 +79,8 @@ ENGINE_DTC_DATABASE = {
         "is_safety_critical": True,
         "telemetry": {
             "ECM_ROM_Check": "FAILED",
-            "ECM_Voltage": 12.1,
-            "Battery_Voltage": 12.1,
+            "ECM_Voltage": 12.5,
+            "Battery_Voltage": 12.5,
             "Engine_RPM": 0
         }
     },

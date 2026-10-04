@@ -1,0 +1,477 @@
+[
+  {
+    "dtc": "P0217",
+    "execution_time_sec": 423.59,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Engine Coolant Temperature Sensor Faulty' for P0217 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0300",
+    "execution_time_sec": 334.02,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Crankshaft Position Sensor (CKP)' for P0300 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0301",
+    "execution_time_sec": 322.61,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Fuel Injector 1' for P0301 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0335",
+    "execution_time_sec": 341.5,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Crankshaft Position Sensor (POS) Circuit' for P0335 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0340",
+    "execution_time_sec": 424.85,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Camshaft Position Sensor (PHASE)' for P0340 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0500",
+    "execution_time_sec": 481.46,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Vehicle Speed Sensor 'A'' for P0500 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0605",
+    "execution_time_sec": 414.89,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty or damaged ECM ROM' for P0605 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P2101",
+    "execution_time_sec": 555.23,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "7/7 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Throttle Control Motor Voltage Sensor' for P2101 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0101",
+    "execution_time_sec": 501.09,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "6/6 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty MAF Sensor' for P0101 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0113",
+    "execution_time_sec": 448.55,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty IAT Sensor' for P0113 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0117",
+    "execution_time_sec": 400.31,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty ECT Sensor' for P0117 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0122",
+    "execution_time_sec": 479.88,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty Throttle/Pedal Position Sensor/Switch 'A'' for P0122 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0132",
+    "execution_time_sec": 405.3,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty O2 Sensor' for P0132 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0138",
+    "execution_time_sec": 427.72,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "4/4 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty O2 Sensor' for P0138 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0171",
+    "execution_time_sec": 449.66,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty MAF sensor' for P0171 with 80.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0420",
+    "execution_time_sec": 412.37,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Catalyst System Efficiency Below Threshold (Bank 1)' for P0420 with 95.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0442",
+    "execution_time_sec": 499.39,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "6/6 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty EVAP canister vent valve' for P0442 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0455",
+    "execution_time_sec": 432.86,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Faulty EVAP Canister Valve' for P0455 with 90.0% confidence."
+      }
+    ]
+  },
+  {
+    "dtc": "P0456",
+    "execution_time_sec": 385.12,
+    "overall_passed": true,
+    "metrics": [
+      {
+        "metric_name": "Argument Correctness",
+        "score": 1.0,
+        "passed": true,
+        "reason": "5/5 PIDs successfully retrieved from telemetry source."
+      },
+      {
+        "metric_name": "Step Efficiency",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Optimal step count achieved (2/2)."
+      },
+      {
+        "metric_name": "Task Completion",
+        "score": 1.0,
+        "passed": true,
+        "reason": "Successfully identified root cause 'Evaporative Emission Control System Leak' for P0456 with 90.0% confidence."
+      }
+    ]
+  }
+]

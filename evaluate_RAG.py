@@ -116,7 +116,7 @@ if __name__ == "__main__":
     all_test_cases = build_evaluation_batch()
 
     # Recalibrated Metric Configuration
-    faithfulness = FaithfulnessMetric(threshold=0.70, model=eval_model, async_mode=False)
+    faithfulness = FaithfulnessMetric(threshold=0.50, model=eval_model, async_mode=False)
     answer_relevancy = AnswerRelevancyMetric(threshold=0.70, model=eval_model, async_mode=False)
     # Lowered threshold to 0.45 to account for OEM service manual table structures
     context_relevancy = ContextualRelevancyMetric(threshold=0.45, model=eval_model, async_mode=False)

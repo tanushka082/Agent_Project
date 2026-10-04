@@ -8,7 +8,7 @@ from reasoning_node import reasoning_node
 
 # Import HARDWARE_MODE and DTC database for display & random selection
 from telemetry_adapter import HARDWARE_MODE
-from ecu_database import ENGINE_DTC_DATABASE
+from Raspberry_Pi.ecu_database import ENGINE_DTC_DATABASE
 
 # 1. Build LangGraph Workflow
 workflow = StateGraph(DiagnosticState)
